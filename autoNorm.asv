@@ -1,0 +1,15 @@
+%--------------------------------------------------------------------------
+%description:kNN autoNorm function
+%input:
+%output:
+%date:20171115
+%author:guankaer
+%--------------------------------------------------------------------------
+function  [normDataSet,range,minVals] = autoNorm(dataSet)
+for i =1:length(dataSet)
+    minVals = min(dataSet());
+    maxVals = max(dataSet);
+    range = maxVals - minVals;
+    normDataSet(1:length(dataSet),1) = minVals;
+    normDataSet = (dataSet - normDataSet)/range;
+end
